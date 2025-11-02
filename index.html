@@ -919,16 +919,6 @@
             
             <img src="Assets/qr.png" alt="QR Code" class="qr-code">
             
-            <div class="account-info">
-                <div class="account-name">Muhammad Danial Asyraf Bin Senon</div>
-                <div class="account-number">
-                    <span id="account-number">151061611596</span>
-                    <button class="copy-btn" onclick="copyAccountNumber()">
-                        <i class="fas fa-copy"></i>
-                    </button>
-                </div>
-            </div>
-            
         </div>
     </div>
 
@@ -1160,23 +1150,7 @@
             closeModal('calendar-modal');
         }
         
-        // Fungsi untuk menyalin nombor akaun
-        function copyAccountNumber() {
-            const accountNumber = document.getElementById('account-number').textContent;
-            navigator.clipboard.writeText(accountNumber).then(() => {
-                alert('Nombor akaun telah disalin: ' + accountNumber);
-            }).catch(err => {
-                console.error('Gagal menyalin teks: ', err);
-                // Fallback untuk peramban yang tidak menyokong clipboard API
-                const tempTextArea = document.createElement('textarea');
-                tempTextArea.value = accountNumber;
-                document.body.appendChild(tempTextArea);
-                tempTextArea.select();
-                document.execCommand('copy');
-                document.body.removeChild(tempTextArea);
-                alert('Nombor akaun telah disalin: ' + accountNumber);
-            });
-        }
+        
         
         // Fungsi untuk submit RSVP
         function submitRSVP() {
@@ -1296,4 +1270,5 @@
         }
     </script>
 </body>
+
 </html>
